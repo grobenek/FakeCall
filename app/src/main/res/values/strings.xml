@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">FakeCall</string>
+    <string name="title_home">Volaj</string>
+    <string name="title_dashboard">Cisla</string>
+    <string name="title_notifications">Info</string>
+
+</resources>
