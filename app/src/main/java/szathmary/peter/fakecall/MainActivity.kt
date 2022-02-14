@@ -35,9 +35,10 @@ class MainActivity : AppCompatActivity() {
         navView.setupWithNavController(navController)
     }
 
-    public fun switchActivities(cislo: String) {
+    public fun switchActivities(cislo: String, meno: String) {
         val switchActivityIntent = Intent(this, TelefonatActivity::class.java)
         switchActivityIntent.putExtra("cislo", cislo)
+        switchActivityIntent.putExtra("meno", meno)
 
         startActivity(switchActivityIntent)
     }

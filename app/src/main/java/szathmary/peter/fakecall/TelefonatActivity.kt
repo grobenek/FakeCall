@@ -14,20 +14,25 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 class TelefonatActivity : AppCompatActivity() {
     lateinit var cislo : String
+    lateinit var meno: String
     var resume = false
     var elapsedTime: Long = 0
-    var TAG = "TAG"
+    private var TAG = "TAG"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.telefonat_activity)
         retrieveMessage()
+
+        val menoTextView : TextView = findViewById(R.id.menoTextViewVolanie)
+        menoTextView.text = meno
+
         val cancelButton : FloatingActionButton = findViewById(R.id.cancelActionButton)
         cancelButton.setOnClickListener(View.OnClickListener {
             switchActivities(cislo)
         })
         val volamText: TextView = findViewById(R.id.volamTextView)
-        volamText.text = getString(R.string.volam_cislo, cislo)
+        volamText.text = getString(R.string.cislo, cislo)
 
         val counter : Chronometer = findViewById(R.id.timer)
 
@@ -50,6 +55,7 @@ class TelefonatActivity : AppCompatActivity() {
 
    private fun retrieveMessage() {
         cislo = intent.getStringExtra("cislo").toString()
+       meno = intent.getStringExtra("meno").toString()
     }
 
     private fun switchActivities(cislo: String) {
