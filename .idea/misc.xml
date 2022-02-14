@@ -8,6 +8,7 @@
         <entry key="app/src/main/res/drawable/circle_button.xml" value="0.213" />
         <entry key="app/src/main/res/drawable/ic_call.xml" value="0.213" />
         <entry key="app/src/main/res/drawable/ic_dashboard_black_24dp.xml" value="0.24" />
+        <entry key="app/src/main/res/drawable/ic_decline_call.xml" value="0.24" />
         <entry key="app/src/main/res/drawable/roundedbutton.xml" value="0.24" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.19610507246376813" />
         <entry key="app/src/main/res/layout/fragment_cisla.xml" value="0.23385416666666667" />
@@ -16,6 +17,8 @@
         <entry key="app/src/main/res/layout/fragment_info.xml" value="0.23385416666666667" />
         <entry key="app/src/main/res/layout/fragment_notifications.xml" value="0.19610507246376813" />
         <entry key="app/src/main/res/layout/fragment_volaj.xml" value="0.21010762751520823" />
+        <entry key="app/src/main/res/layout/prijaty_hovor_fragment.xml" value="0.23385416666666667" />
+        <entry key="app/src/main/res/layout/telefonat_activity.xml" value="0.23385416666666667" />
         <entry key="app/src/main/res/menu/bottom_nav_menu.xml" value="0.23385416666666667" />
         <entry key="app/src/main/res/mipmap-anydpi-v26/call_icon.xml" value="0.213" />
       </map>
@@ -26,5 +29,12 @@
   </component>
   <component name="ProjectType">
     <option name="id" value="Android" />
+  </component>
+  <component name="VisualizationToolProject">
+    <option name="state">
+      <ProjectState>
+        <option name="scale" value="0.21010762751520823" />
+      </ProjectState>
+    </option>
   </component>
 </project>

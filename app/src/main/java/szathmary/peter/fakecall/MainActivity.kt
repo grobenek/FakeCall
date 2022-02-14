@@ -1,18 +1,15 @@
 package szathmary.peter.fakecall
 
-import android.annotation.SuppressLint
+import android.content.Intent
 import android.os.Bundle
-import android.view.View
-import android.widget.Button
-import android.widget.TextView
-import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
-import com.google.android.material.floatingactionbutton.FloatingActionButton
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import szathmary.peter.fakecall.databinding.ActivityMainBinding
+
 
 class MainActivity : AppCompatActivity() {
 
@@ -36,8 +33,13 @@ class MainActivity : AppCompatActivity() {
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
+    }
 
+    public fun switchActivities(cislo: String) {
+        val switchActivityIntent = Intent(this, TelefonatActivity::class.java)
+        switchActivityIntent.putExtra("cislo", cislo)
 
+        startActivity(switchActivityIntent)
     }
 
 }

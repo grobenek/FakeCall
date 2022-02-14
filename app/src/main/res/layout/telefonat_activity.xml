@@ -1,51 +1,59 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.dashboard.CislaFragment">
+    android:paddingTop="?attr/actionBarSize">
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/callActionButton"
+        android:id="@+id/cancelActionButton"
         android:layout_width="75dp"
         android:layout_height="75dp"
-        android:layout_marginBottom="112dp"
-        android:clickable="false"
-        android:contentDescription="@string/make_call"
+        android:clickable="true"
+        android:contentDescription="@string/decline_call"
         android:focusable="true"
-        android:src="@drawable/ic_call"
-        app:backgroundTint="#69A128"
+        app:backgroundTint="#EF0F0F"
         app:fabCustomSize="75dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        tools:ignore="SpeakableTextPresentCheck" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.861"
+        app:srcCompat="@drawable/ic_decline_call" />
 
     <TextView
-        android:id="@+id/cisloText"
+        android:id="@+id/volamTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="168dp"
-        app:layout_constraintBottom_toTopOf="@+id/callActionButton"
+        android:layout_marginBottom="248dp"
+        app:layout_constraintBottom_toTopOf="@+id/cancelActionButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <EditText
-        android:id="@+id/zadavanieCisla"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:contentDescription="@string/zadaj_cislo"
-        android:ems="10"
-        android:inputType="phone"
-        android:maxLength="13"
-        android:minHeight="48dp"
-        app:layout_constraintBottom_toTopOf="@+id/callActionButton"
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="221dp"
+        android:layout_height="179dp"
+        android:layout_marginTop="4dp"
+        app:layout_constraintBottom_toTopOf="@+id/volamTextView"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.314" />
+        app:layout_constraintVertical_bias="0.186"
+        app:srcCompat="@drawable/calling_avatar" />
+
+    <Chronometer
+        android:id="@+id/timer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.487" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
