@@ -46,7 +46,6 @@ class TelefonatActivity : AppCompatActivity() {
         }
         counter.start()
 
-
     }
 
    private fun retrieveMessage() {
