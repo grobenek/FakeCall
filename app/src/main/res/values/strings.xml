@@ -6,6 +6,7 @@
     <string name="zadaj_cislo">Zadaj cislo</string>
     <string name="volam_cislo">Volam cislo: %s</string>
     <string name="string">%s</string>
+    <string name="notification_title">Fake call</string>
     <string name="zle_zadane_cislo">Zle zadane telefonne cislo!</string>
     <string name="zadaj_meno_volajuceho">Zadaj meno volajuceho!</string>
     <string name="decline_call">Decline call</string>
@@ -24,5 +25,6 @@
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
     <string name="accept_call">accept call</string>
     <string name="calling_avatar">calling avatar</string>
+    <string name="cakamMinut">Cakam %d minut</string>
 
 </resources>

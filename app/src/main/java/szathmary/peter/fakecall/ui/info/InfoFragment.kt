@@ -1,16 +1,15 @@
-package szathmary.peter.fakecall.ui.dashboard
+package szathmary.peter.fakecall.ui.info
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
-import szathmary.peter.fakecall.databinding.FragmentCislaBinding
+import szathmary.peter.fakecall.databinding.FragmentInfoBinding
 
-class CislaFragment : Fragment() {
+class InfoFragment : Fragment() {
 
-    private var _binding: FragmentCislaBinding? = null
+    private var _binding: FragmentInfoBinding? = null
 
     // This property is only valid between onCreateView and
     // onDestroyView.
@@ -22,8 +21,10 @@ class CislaFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
 
-        _binding = FragmentCislaBinding.inflate(inflater, container, false)
+
+        _binding = FragmentInfoBinding.inflate(inflater, container, false)
         val root: View = binding.root
+
         return root
     }
 

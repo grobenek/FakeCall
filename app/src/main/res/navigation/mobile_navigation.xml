@@ -7,19 +7,19 @@
 
     <fragment
         android:id="@+id/navigation_home"
-        android:name="szathmary.peter.fakecall.ui.home.VolajFragment"
+        android:name="szathmary.peter.fakecall.ui.volaj.VolajFragment"
         android:label="@string/title_home"
         tools:layout="@layout/fragment_cisla" />
 
     <fragment
         android:id="@+id/navigation_dashboard"
-        android:name="szathmary.peter.fakecall.ui.dashboard.CislaFragment"
+        android:name="szathmary.peter.fakecall.ui.cisla.CislaFragment"
         android:label="@string/title_dashboard"
         tools:layout="@layout/fragment_volaj" />
 
     <fragment
         android:id="@+id/navigation_notifications"
-        android:name="szathmary.peter.fakecall.ui.notifications.InfoFragment"
+        android:name="szathmary.peter.fakecall.ui.info.InfoFragment"
         android:label="@string/title_notifications"
         tools:layout="@layout/fragment_info" />
 </navigation>
