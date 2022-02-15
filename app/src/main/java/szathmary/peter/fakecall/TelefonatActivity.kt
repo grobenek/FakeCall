@@ -1,6 +1,7 @@
 package szathmary.peter.fakecall
 
 import android.content.Intent
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.os.SystemClock
 import android.util.Log
@@ -13,10 +14,10 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 
 class TelefonatActivity : AppCompatActivity() {
-    lateinit var cislo : String
-    lateinit var meno: String
-    var resume = false
-    var elapsedTime: Long = 0
+    private lateinit var cislo : String
+    private lateinit var meno: String
+    private var resume = false
+    private var elapsedTime: Long = 0
     private var TAG = "TAG"
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -32,7 +33,7 @@ class TelefonatActivity : AppCompatActivity() {
             switchActivities(cislo)
         })
         val volamText: TextView = findViewById(R.id.volamTextView)
-        volamText.text = getString(R.string.cislo, cislo)
+        volamText.text = getString(R.string.string, cislo)
 
         val counter : Chronometer = findViewById(R.id.timer)
 

@@ -1,6 +1,5 @@
 package szathmary.peter.fakecall
 
-import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
@@ -11,12 +10,13 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 import szathmary.peter.fakecall.databinding.ActivityMainBinding
 
 
-class MainActivity : AppCompatActivity() {
+open class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
 
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
@@ -33,14 +33,6 @@ class MainActivity : AppCompatActivity() {
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
-    }
-
-    public fun switchActivities(cislo: String, meno: String) {
-        val switchActivityIntent = Intent(this, TelefonatActivity::class.java)
-        switchActivityIntent.putExtra("cislo", cislo)
-        switchActivityIntent.putExtra("meno", meno)
-
-        startActivity(switchActivityIntent)
     }
 
 }

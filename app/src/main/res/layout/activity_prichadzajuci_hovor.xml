@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/coordinatorLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PrichadzajuciHovorActivity">
+
+    <ImageView
+        android:id="@+id/incCallAvatar"
+        android:layout_width="221dp"
+        android:layout_height="179dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="48dp"
+        android:layout_marginEnd="8dp"
+
+        android:contentDescription="@string/calling_avatar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/calling_avatar" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/acceptFloatingActionButton"
+        android:layout_width="65dp"
+        android:layout_height="65dp"
+        android:layout_marginStart="84dp"
+        android:layout_marginBottom="120dp"
+        android:clickable="true"
+        android:contentDescription="@string/accept_call"
+        android:focusable="true"
+        app:backgroundTint="#69A128"
+        app:fabCustomSize="65dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/incCallAvatar"
+        app:layout_constraintVertical_bias="1.0"
+        app:srcCompat="@drawable/ic_call" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/declineFolatingActionButton"
+        android:layout_width="65dp"
+        android:layout_height="65dp"
+        android:layout_marginStart="108dp"
+        android:layout_marginBottom="120dp"
+        android:clickable="true"
+        android:contentDescription="@string/decline_call"
+        android:focusable="true"
+        app:backgroundTint="#EF0F0F"
+        app:fabCustomSize="65dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.033"
+        app:layout_constraintStart_toEndOf="@+id/acceptFloatingActionButton"
+        app:srcCompat="@drawable/ic_decline_call" />
+
+    <TextView
+        android:id="@+id/prichadzajuciHovorMeno"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/incCallAvatar" />
+
+    <TextView
+        android:id="@+id/prichadzajuciHovorCislo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="48dp"
+        app:layout_constraintBottom_toTopOf="@+id/declineFolatingActionButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/prichadzajuciHovorMeno"
+        app:layout_constraintVertical_bias="0.018" />
+</androidx.constraintlayout.widget.ConstraintLayout>

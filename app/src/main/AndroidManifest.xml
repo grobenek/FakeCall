@@ -10,13 +10,19 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FakeCall">
         <activity
-            android:name=".TelefonatActivity"
+            android:name=".PrichadzajuciHovorActivity"
+            android:exported="false"
+            android:label="@string/title_activity_prichadzajuci_hovor"
             android:noHistory="true"
-            android:exported="false" />
+            android:theme="@style/Theme.FakeCall.NoActionBar" />
+        <activity
+            android:name=".TelefonatActivity"
+            android:exported="false"
+            android:noHistory="true" />
         <activity
             android:name=".MainActivity"
-            android:noHistory="true"
-            android:exported="true">
+            android:exported="true"
+            android:noHistory="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

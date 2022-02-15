@@ -5,7 +5,7 @@
     <string name="title_notifications">Info</string>
     <string name="zadaj_cislo">Zadaj cislo</string>
     <string name="volam_cislo">Volam cislo: %s</string>
-    <string name="cislo">%s</string>
+    <string name="string">%s</string>
     <string name="zle_zadane_cislo">Zle zadane telefonne cislo!</string>
     <string name="zadaj_meno_volajuceho">Zadaj meno volajuceho!</string>
     <string name="decline_call">Decline call</string>
@@ -13,5 +13,16 @@
     <string name="default_calling_avatar">Default calling avatar</string>
     <string name="phone_number">Phone number</string>
     <string name="name">Name</string>
+    <string name="title_activity_prichadzajuci_hovor">PrichadzajuciHovorActivity</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="accept_call">accept call</string>
+    <string name="calling_avatar">calling avatar</string>
 
 </resources>

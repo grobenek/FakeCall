@@ -11,11 +11,15 @@
         <entry key="app/src/main/res/drawable/ic_decline_call.xml" value="0.24" />
         <entry key="app/src/main/res/drawable/roundedbutton.xml" value="0.24" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.19610507246376813" />
+        <entry key="app/src/main/res/layout/activity_prichadzajuci_hovor.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/content_prichadzajuci_hovor.xml" value="0.23278985507246377" />
         <entry key="app/src/main/res/layout/fragment_cisla.xml" value="0.23385416666666667" />
         <entry key="app/src/main/res/layout/fragment_dashboard.xml" value="0.19610507246376813" />
+        <entry key="app/src/main/res/layout/fragment_first.xml" value="0.23278985507246377" />
         <entry key="app/src/main/res/layout/fragment_home.xml" value="0.19610507246376813" />
         <entry key="app/src/main/res/layout/fragment_info.xml" value="0.23385416666666667" />
         <entry key="app/src/main/res/layout/fragment_notifications.xml" value="0.19610507246376813" />
+        <entry key="app/src/main/res/layout/fragment_second.xml" value="0.23278985507246377" />
         <entry key="app/src/main/res/layout/fragment_volaj.xml" value="0.21010762751520823" />
         <entry key="app/src/main/res/layout/prijaty_hovor_fragment.xml" value="0.23385416666666667" />
         <entry key="app/src/main/res/layout/telefonat_activity.xml" value="0.23385416666666667" />

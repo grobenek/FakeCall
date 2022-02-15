@@ -1,6 +1,7 @@
 package szathmary.peter.fakecall.ui.home
 
-import android.os.Build
+import android.content.Intent
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
@@ -16,12 +17,14 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import szathmary.peter.fakecall.MainActivity
+import szathmary.peter.fakecall.PrichadzajuciHovorActivity
 import szathmary.peter.fakecall.R
 import szathmary.peter.fakecall.databinding.FragmentVolajBinding
-import java.util.*
 
 
-class VolajFragment() : Fragment() {
+class VolajFragment : Fragment() {
+
+    private val delayInMilliseconds: Long = 2000
 
     private lateinit var meno: String
     private var cislo = "Zle zadane cislo!"
@@ -81,6 +84,7 @@ class VolajFragment() : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         //AK MAS FRAGMENT, PRACUJ S UI AZ V TEJTO METODE
         super.onViewCreated(view, savedInstanceState)
+
         cisloEdit = view.findViewById(R.id.zadavanieCisla)
         cisloEdit.addTextChangedListener(textWatcherCislo)
         cisloTextView = view.findViewById(R.id.cisloText)
@@ -88,6 +92,7 @@ class VolajFragment() : Fragment() {
         menoTextEdit = view.findViewById(R.id.menoTextEdit)
         menoTextEdit.addTextChangedListener(textWatcherMeno)
 
+        checkForPreferences()
         //TAKTO POUZIVAJ LISTENERY
         callActionButton.setOnClickListener {
             //Skontrolujem ci je cislo spravne, ak ano, zobrazim do textEdit na ake cislo volam
@@ -99,16 +104,34 @@ class VolajFragment() : Fragment() {
                 cisloTextView.text = getString(R.string.zadaj_meno_volajuceho)
             } else {
                 cisloTextView.text = getString(R.string.volam_cislo, cislo)
-                val mainActivity: MainActivity = activity as MainActivity
-
-                Handler(Looper.getMainLooper()).postDelayed(
-                    {
-                        mainActivity.switchActivities(cislo, meno)
-                    },
-                    2000 // value in milliseconds
-                )
+                switchToPrichadzajuciHovorActivityWithDelay(delayInMilliseconds)
             }
         }
+    }
+
+    private fun checkForPreferences() {
+        val pref = requireActivity().applicationContext.getSharedPreferences("MyPref", 0) // 0 - for private mode
+        if (pref.contains("meno") && pref.contains("cislo")) {
+            cislo = pref.getString("cislo", null).toString()
+            cisloEdit.setText(cislo)
+            meno = pref.getString("meno", null).toString()
+            menoTextEdit.setText(meno)
+        }
+    }
+
+    private fun switchToPrichadzajuciHovorActivityWithDelay(milliseconds: Long) {
+        val mainActivity: MainActivity = activity as MainActivity
+
+        Handler(Looper.getMainLooper()).postDelayed(
+            {
+                val switchActivityIntent =
+                    Intent(mainActivity, PrichadzajuciHovorActivity::class.java)
+                switchActivityIntent.putExtra("cislo", cislo)
+                switchActivityIntent.putExtra("meno", meno)
+                startActivity(switchActivityIntent)
+            },
+            milliseconds // value in milliseconds
+        )
     }
 
     private fun isValidPhone(phone: CharSequence?): Boolean {
