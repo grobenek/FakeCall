@@ -25,6 +25,7 @@
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
     <string name="accept_call">accept call</string>
     <string name="calling_avatar">calling avatar</string>
-    <string name="cakamMinut">Cakam %d minut</string>
+    <string name="waitingInMinutes">Waiting %d minutes</string>
+    <string name="hours_minutes">Hours | Minutes</string>
 
 </resources>

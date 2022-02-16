@@ -129,7 +129,7 @@ class VolajFragment : Fragment() {
             } else if (menoTextEdit.text.isEmpty() || menoTextEdit.text.isBlank()) {
                 cisloTextView.text = getString(R.string.zadaj_meno_volajuceho)
             } else {
-                cisloTextView.text = getString(R.string.cakamMinut, delayInMilliseconds / 60_000)
+                cisloTextView.text = getString(R.string.waitingInMinutes, delayInMilliseconds / 60_000)
                 switchToPrichadzajuciHovorActivityWithDelay(delayInMilliseconds)
             }
         }

@@ -27,8 +27,6 @@ class PrichadzajuciHovorActivity : AppCompatActivity() {
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
             vibrator = getSystemService(Context.VIBRATOR_MANAGER_SERVICE) as VibratorManager
-        } else {
-            null
         }
 
         setContentView(R.layout.activity_prichadzajuci_hovor)
