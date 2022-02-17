@@ -1,6 +1,8 @@
 package szathmary.peter.fakecall.ui.volaj
 
+import android.content.Context.MODE_PRIVATE
 import android.content.Intent
+import android.content.SharedPreferences
 import android.os.Build
 import android.os.Bundle
 import android.telephony.PhoneNumberUtils
@@ -22,7 +24,10 @@ import kotlinx.coroutines.launch
 import szathmary.peter.fakecall.MainActivity
 import szathmary.peter.fakecall.PrichadzajuciHovorActivity
 import szathmary.peter.fakecall.R
+import szathmary.peter.fakecall.contacts.Contact
+import szathmary.peter.fakecall.contacts.ContactsList
 import szathmary.peter.fakecall.databinding.FragmentVolajBinding
+import szathmary.peter.fakecall.ui.cisla.ContactsAdapter
 
 
 class VolajFragment : Fragment() {
@@ -136,6 +141,12 @@ class VolajFragment : Fragment() {
 
     }
 
+    private fun addContactToHistory(contact: Contact) {
+        val adapter = ContactsAdapter(ContactsList)
+        ContactsList.add(contact)
+        adapter.notifyItemInserted(ContactsList.numberOfContacts-1)
+    }
+
     private fun checkForPreferences() {
         val pref = requireActivity().applicationContext.getSharedPreferences(
             "MyPref",
@@ -151,17 +162,7 @@ class VolajFragment : Fragment() {
 
     private fun switchToPrichadzajuciHovorActivityWithDelay(milliseconds: Long) {
         val mainActivity: MainActivity = activity as MainActivity
-
-//        Handler(Looper.getMainLooper()).postDelayed(
-//            {
-//                val switchActivityIntent =
-//                    Intent(mainActivity, PrichadzajuciHovorActivity::class.java)
-//                switchActivityIntent.putExtra("cislo", cislo)
-//                switchActivityIntent.putExtra("meno", meno)
-//                startActivity(switchActivityIntent)
-//            },
-//            milliseconds // value in milliseconds
-//        )
+        this.addContactToHistory(Contact(meno, cislo))
 
         GlobalScope.launch { // launch new coroutine in background and continue
             delay(milliseconds) // non-blocking delay for 1 second (default time unit is ms)

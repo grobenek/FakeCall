@@ -20,12 +20,14 @@
     <string name="second_fragment_label">Second Fragment</string>
     <string name="next">Next</string>
     <string name="previous">Previous</string>
-
+    <string name="deleteContacts">Delete contact history</string>
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
     <string name="accept_call">accept call</string>
     <string name="calling_avatar">calling avatar</string>
     <string name="waitingInMinutes">Waiting %d minutes</string>
     <string name="hours_minutes">Hours | Minutes</string>
+    <string name="info_text">This is app for pranks/fake calls\n Enjoy!</string>
+    <string name="call">call</string>
 
 </resources>
