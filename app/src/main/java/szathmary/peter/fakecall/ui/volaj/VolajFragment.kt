@@ -116,6 +116,7 @@ class VolajFragment : Fragment() {
         cisloEdit.addTextChangedListener(textWatcherCislo)
         cisloTextView = view.findViewById(R.id.cisloText)
         callActionButton = view.findViewById(R.id.callActionButton)
+        callActionButton.isClickable = true
         menoTextEdit = view.findViewById(R.id.menoTextEdit)
         menoTextEdit.addTextChangedListener(textWatcherMeno)
 
@@ -160,6 +161,7 @@ class VolajFragment : Fragment() {
     }
 
     private fun switchToPrichadzajuciHovorActivityWithDelay(milliseconds: Long) {
+        callActionButton.isClickable = false
         val mainActivity: MainActivity = activity as MainActivity
         this.addContactToHistory(Contact(meno, cislo))
 

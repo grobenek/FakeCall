@@ -115,9 +115,11 @@ class CislaFragment : Fragment() {
             val textView = viewHolder.contactTextView
             textView.text = contact.name + "   " + contact.number
             val button = viewHolder.callButton
+            button.isClickable = true
             button.text = "call"
             button.setOnClickListener {
                 textView.text = "Calling ${contact.name}"
+                button.isClickable = false
                 switchToPrichadzajuciHovorActivityWithDelay(MainActivity.getDelayInMilliseconds(), contact.name, contact.number)
             }
         }
