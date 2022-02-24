@@ -27,13 +27,12 @@ import szathmary.peter.fakecall.R
 import szathmary.peter.fakecall.contacts.Contact
 import szathmary.peter.fakecall.contacts.ContactsList
 import szathmary.peter.fakecall.databinding.FragmentVolajBinding
-import szathmary.peter.fakecall.ui.cisla.ContactsAdapter
+import szathmary.peter.fakecall.ui.cisla.CislaFragment
 
 
 class VolajFragment : Fragment() {
 
-    private var delayInMilliseconds: Long = 2000
-
+    private var delayInMilliseconds = MainActivity.getDelayInMilliseconds()
     private lateinit var meno: String
     private var cislo = "Zle zadane cislo!"
     private lateinit var callActionButton: FloatingActionButton
@@ -53,7 +52,7 @@ class VolajFragment : Fragment() {
                 hodiny = timePicker.hour * 3_600_000
                 minuty = timePicker.minute * 60_000
             }
-            delayInMilliseconds = (hodiny + minuty).toLong()
+            MainActivity.setDelayInMilliseconds((hodiny + minuty).toLong())
         }
 
     private var textWatcherMeno: TextWatcher = object : TextWatcher {
@@ -135,14 +134,14 @@ class VolajFragment : Fragment() {
                 cisloTextView.text = getString(R.string.zadaj_meno_volajuceho)
             } else {
                 cisloTextView.text = getString(R.string.waitingInMinutes, delayInMilliseconds / 60_000)
-                switchToPrichadzajuciHovorActivityWithDelay(delayInMilliseconds)
+                switchToPrichadzajuciHovorActivityWithDelay(MainActivity.getDelayInMilliseconds())
             }
         }
 
     }
 
     private fun addContactToHistory(contact: Contact) {
-        val adapter = ContactsAdapter(ContactsList)
+        val adapter = CislaFragment().ContactsAdapter(ContactsList)
         ContactsList.add(contact)
         adapter.notifyItemInserted(ContactsList.numberOfContacts-1)
     }

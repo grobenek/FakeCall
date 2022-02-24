@@ -1,8 +1,10 @@
 package szathmary.peter.fakecall
 
 import android.os.Bundle
+import android.view.Window
 import android.view.WindowManager
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.Toolbar
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
@@ -13,7 +15,19 @@ import szathmary.peter.fakecall.databinding.ActivityMainBinding
 
 open class MainActivity : AppCompatActivity() {
 
+
     private lateinit var binding: ActivityMainBinding
+
+    companion object {
+        private var delayInMilliseconds: Long = 2000
+        fun getDelayInMilliseconds(): Long {
+            return delayInMilliseconds;
+        }
+
+        fun setDelayInMilliseconds(milliseconds: Long) {
+            delayInMilliseconds = milliseconds
+        }
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -35,6 +49,7 @@ open class MainActivity : AppCompatActivity() {
                 R.id.navigation_home, R.id.navigation_dashboard, R.id.navigation_notifications
             )
         )
+
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
     }
