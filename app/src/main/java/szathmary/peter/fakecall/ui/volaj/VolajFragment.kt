@@ -1,8 +1,6 @@
 package szathmary.peter.fakecall.ui.volaj
 
-import android.content.Context.MODE_PRIVATE
 import android.content.Intent
-import android.content.SharedPreferences
 import android.os.Build
 import android.os.Bundle
 import android.telephony.PhoneNumberUtils
@@ -142,7 +140,7 @@ class VolajFragment : Fragment() {
     }
 
     private fun addContactToHistory(contact: Contact) {
-        val adapter = CislaFragment().ContactsAdapter(ContactsList)
+        val adapter = CislaFragment().ContactsAdapter()
         ContactsList.add(contact)
         adapter.notifyItemInserted(ContactsList.numberOfContacts-1)
     }

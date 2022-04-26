@@ -35,14 +35,13 @@ class CislaFragment : Fragment() {
     ): View {
 
         _binding = FragmentCislaBinding.inflate(inflater, container, false)
-        val root: View = binding.root
-        return root
+        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         val rvContacts: RecyclerView = view.findViewById(R.id.contactList) as RecyclerView
-        val adapter = ContactsAdapter(ContactsList)
+        val adapter = ContactsAdapter()
         // Attach the adapter to the recyclerview to populate items
         rvContacts.adapter = adapter
         // Set layout manager to position the items
@@ -63,7 +62,7 @@ class CislaFragment : Fragment() {
     }
 
     private fun addContactToHistory(contact: Contact) {
-        val adapter = ContactsAdapter(ContactsList)
+        val adapter = ContactsAdapter()
         ContactsList.add(contact)
         adapter.notifyItemInserted(ContactsList.numberOfContacts - 1)
     }
@@ -86,7 +85,7 @@ class CislaFragment : Fragment() {
         }
     }
 
-    inner class ContactsAdapter(ContactsList: ContactsList.Companion) :
+    inner class ContactsAdapter :
         RecyclerView.Adapter<ContactsAdapter.ViewHolder>() {
 
         // Provide a direct reference to each of the views within a data item
@@ -94,8 +93,8 @@ class CislaFragment : Fragment() {
         inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
             // Your holder should contain and initialize a member variable
             // for any view that will be set as you render a row
-            val contactTextView: TextView = itemView.findViewById<TextView>(R.id.contact_name)
-            val callButton: Button = itemView.findViewById<Button>(R.id.call_button)
+            val contactTextView: TextView = itemView.findViewById(R.id.contact_name)
+            val callButton: Button = itemView.findViewById(R.id.call_button)
         }
 
 
@@ -113,12 +112,12 @@ class CislaFragment : Fragment() {
             val contact: Contact = ContactsList.get(position)
             // Set item views based on your views and data model
             val textView = viewHolder.contactTextView
-            textView.text = contact.name + "   " + contact.number
+            textView.text = getString(R.string.doubleString, contact.name, contact.number)
             val button = viewHolder.callButton
             button.isClickable = true
-            button.text = "call"
+            button.text = getString(R.string.call)
             button.setOnClickListener {
-                textView.text = "Calling ${contact.name}"
+                textView.text = getString(R.string.call_name, contact.name)
                 button.isClickable = false
                 switchToPrichadzajuciHovorActivityWithDelay(MainActivity.getDelayInMilliseconds(), contact.name, contact.number)
             }
